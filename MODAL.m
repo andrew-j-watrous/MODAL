@@ -1,6 +1,5 @@
 function [frequency_sliding,bands,bandpow,bandphases] = MODAL(signal,params)
 %  Multiple Oscillation Detection Algorithm (MOD-AL)
-
 %  Provides the instantaneous power, phase, and frequency of a (neural) signal 
 %  in adaptively identified bands in which power exceeds a global and 
 %  (optionally) a local 1/f fit  of the signal "background"
@@ -74,7 +73,7 @@ end
 if isfield(params,'crop_fs') %default is to crop 
     crop_fs = params.crop_fs;
 else
-    crop_fs = 0;
+    crop_fs = 1;
 end
 
 if size(signal,2)>size(signal,1) %make sure samples is first dimension
